@@ -1,0 +1,109 @@
+---
+title: "Building Muscle: A Practical Plan"
+subtitle: "A simple evidence-informed model for balancing training, food, and recovery"
+---
+
+## The line graph
+
+Muscle growth is usually supported by four connected habits: progressive resistance training, enough calories, adequate protein and other macronutrients, and consistent rest. This line graph is a **planning illustration**, not a medical prediction. It shows how those inputs can work together as weekly training volume rises from very low to very high.
+
+```{r}
+#| label: fig-muscle-gain-plan
+#| fig-cap: "Illustrative muscle-gain planning score by weekly training volume."
+#| echo: false
+#| fig-width: 9
+#| fig-height: 6
+
+library(tidyverse)
+
+muscle_plan <- expand_grid(
+	weekly_sets = seq(6, 24, by = 2),
+	calorie_surplus = c("Maintenance", "+250 kcal/day", "+500 kcal/day"),
+	rest = c("7-9 hours sleep", "Under 7 hours sleep"),
+	protein_target = c("1.6 g/kg protein", "2.2 g/kg protein")
+) |>
+	mutate(
+		surplus_factor = case_match(
+			calorie_surplus,
+			"Maintenance" ~ 0.92,
+			"+250 kcal/day" ~ 1,
+			"+500 kcal/day" ~ 0.96
+		),
+		rest_factor = if_else(rest == "7-9 hours sleep", 1, 0.78),
+		protein_factor = if_else(protein_target == "2.2 g/kg protein", 1.02, 1),
+		volume_factor = 1 - abs(weekly_sets - 16) / 40,
+		planning_score = 100 * volume_factor * surplus_factor * rest_factor * protein_factor
+	)
+
+ggplot(
+	muscle_plan,
+	aes(
+		x = weekly_sets,
+		y = planning_score,
+		color = calorie_surplus,
+		linetype = rest,
+		group = interaction(calorie_surplus, rest)
+	)
+) +
+	geom_line(linewidth = 1) +
+	geom_point(size = 2) +
+	facet_wrap(vars(protein_target)) +
+	scale_x_continuous(breaks = seq(6, 24, by = 2)) +
+	scale_y_continuous(limits = c(0, 105), breaks = seq(0, 100, by = 20)) +
+	scale_color_manual(values = c("Maintenance" = "#2563eb", "+250 kcal/day" = "#0f766e", "+500 kcal/day" = "#d97706")) +
+	labs(
+		x = "Weekly hard sets per muscle group (workouts)",
+		y = "Illustrative muscle-gain planning score",
+		color = "Daily calorie intake",
+		linetype = "Rest / sleep",
+		caption = "The score is a teaching device: many people may respond well around 10-20 hard sets per muscle group per week, but the best amount varies."
+	) +
+	theme_minimal(base_size = 12) +
+	theme(
+		legend.position = "bottom",
+		panel.grid.minor = element_blank(),
+		strip.text = element_text(face = "bold")
+	)
+```
+
+## How to read the graph
+
+The calorie lines show why a modest surplus is often a useful starting point. Maintenance calories can support training, while roughly 200-300 extra calories per day may provide energy for growth without assuming that a bigger surplus is automatically better. The 500-calorie line is intentionally not the highest line because extra calories can add body fat faster than muscle.
+
+The workout axis represents challenging sets per muscle group each week. Many people can begin around 8-12 hard sets and gradually move toward 10-20 as their technique and recovery improve. Add a small amount of weight or a few repetitions over time, and do not increase volume when performance and energy are already falling.
+
+The line style represents rest. Aim for 7-9 hours of sleep, keep at least one easier or rest day in the week, and reduce training briefly when soreness, fatigue, or declining performance persists. The panels compare protein targets within the broader macronutrient plan: about 1.6-2.2 grams of protein per kilogram of body weight per day is a useful range for many active adults. Use carbohydrates to support training energy and include dietary fats for overall health.
+
+## Workout-day muscle map
+
+The pictures below are a simple way to organize a three-day rotation. They show the main muscle groups to train, not every muscle involved in a movement. A complete plan should still use exercises you can perform with controlled technique and a range of motion that feels safe for you.
+
+::: {.columns}
+::: {.column width="33%"}
+### Day 1: Push
+
+![Anterior muscle groups for push-day planning.](https://upload.wikimedia.org/wikipedia/commons/e/e5/Muscles_anterior_labeled.png)
+
+Train the chest, front and side shoulders, and triceps with presses, push-ups, and controlled isolation work. Leave one or two good repetitions in reserve on most sets instead of forcing every set to failure.
+:::
+
+::: {.column width="33%"}
+### Day 2: Pull
+
+![Anterior and posterior muscle groups for pull-day planning.](https://upload.wikimedia.org/wikipedia/commons/9/91/1105_Anterior_and_Posterior_Views_of_Muscles.jpg)
+
+Train the upper back, lats, rear shoulders, biceps, and forearms with rows, pull-downs or pull-ups, and curls. Balance pulling volume with pressing volume so the shoulders stay comfortable.
+:::
+
+::: {.column width="33%"}
+### Day 3: Legs
+
+![Lower-extremity muscle groups for legs-day planning.](https://upload.wikimedia.org/wikipedia/commons/0/05/Illu_lower_extremity_muscles.jpg)
+
+Train the quadriceps, hamstrings, glutes, and calves with a squat pattern, a hip hinge, and calf work. Start with a manageable number of sets, because leg training can create more fatigue and may need extra recovery.
+:::
+:::
+
+Image sources: [anterior muscles](https://commons.wikimedia.org/wiki/File:Muscles_anterior_labeled.png), [anterior and posterior muscles](https://commons.wikimedia.org/wiki/File:1105_Anterior_and_Posterior_Views_of_Muscles.jpg), and [lower-extremity muscles](https://commons.wikimedia.org/wiki/File:Illu_lower_extremity_muscles.jpg) from Wikimedia Commons.
+
+Track body weight, gym performance, energy, and waist measurements for several weeks. If weight and performance are not moving, adjust calories gradually rather than changing every variable at once.
