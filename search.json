@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Building Muscle: A Practical Plan",
+    "section": "",
+    "text": "Muscle growth is usually supported by four connected habits: progressive resistance training, enough calories, adequate protein and other macronutrients, and consistent rest. This line graph is a planning illustration, not a medical prediction. It shows how those inputs can work together as weekly training volume rises from very low to very high.\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `surplus_factor = case_match(...)`.\nCaused by warning:\n! `case_match()` was deprecated in dplyr 1.2.0.\nℹ Please use `recode_values()` instead.\n\n\n\n\n\n\n\n\nFigure 1: Illustrative muscle-gain planning score by weekly training volume."
+  },
+  {
+    "objectID": "index.html#the-line-graph",
+    "href": "index.html#the-line-graph",
+    "title": "Building Muscle: A Practical Plan",
+    "section": "",
+    "text": "Muscle growth is usually supported by four connected habits: progressive resistance training, enough calories, adequate protein and other macronutrients, and consistent rest. This line graph is a planning illustration, not a medical prediction. It shows how those inputs can work together as weekly training volume rises from very low to very high.\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `surplus_factor = case_match(...)`.\nCaused by warning:\n! `case_match()` was deprecated in dplyr 1.2.0.\nℹ Please use `recode_values()` instead.\n\n\n\n\n\n\n\n\nFigure 1: Illustrative muscle-gain planning score by weekly training volume."
+  },
+  {
+    "objectID": "index.html#how-to-read-the-graph",
+    "href": "index.html#how-to-read-the-graph",
+    "title": "Building Muscle: A Practical Plan",
+    "section": "How to read the graph",
+    "text": "How to read the graph\nThe calorie lines show why a modest surplus is often a useful starting point. Maintenance calories can support training, while roughly 200-300 extra calories per day may provide energy for growth without assuming that a bigger surplus is automatically better. The 500-calorie line is intentionally not the highest line because extra calories can add body fat faster than muscle.\nThe workout axis represents challenging sets per muscle group each week. Many people can begin around 8-12 hard sets and gradually move toward 10-20 as their technique and recovery improve. Add a small amount of weight or a few repetitions over time, and do not increase volume when performance and energy are already falling.\nThe line style represents rest. Aim for 7-9 hours of sleep, keep at least one easier or rest day in the week, and reduce training briefly when soreness, fatigue, or declining performance persists. The panels compare protein targets within the broader macronutrient plan: about 1.6-2.2 grams of protein per kilogram of body weight per day is a useful range for many active adults. Use carbohydrates to support training energy and include dietary fats for overall health."
+  },
+  {
+    "objectID": "index.html#workout-day-muscle-map",
+    "href": "index.html#workout-day-muscle-map",
+    "title": "Building Muscle: A Practical Plan",
+    "section": "Workout-day muscle map",
+    "text": "Workout-day muscle map\nThe pictures below are a simple way to organize a three-day rotation. They show the main muscle groups to train, not every muscle involved in a movement. A complete plan should still use exercises you can perform with controlled technique and a range of motion that feels safe for you.\n\n\n\nDay 1: Push\n\n\n\nAnterior muscle groups for push-day planning.\n\n\nTrain the chest, front and side shoulders, and triceps with presses, push-ups, and controlled isolation work. Leave one or two good repetitions in reserve on most sets instead of forcing every set to failure.\n\n\n\nDay 2: Pull\n\n\n\nAnterior and posterior muscle groups for pull-day planning.\n\n\nTrain the upper back, lats, rear shoulders, biceps, and forearms with rows, pull-downs or pull-ups, and curls. Balance pulling volume with pressing volume so the shoulders stay comfortable.\n\n\n\nDay 3: Legs\n\n\n\nLower-extremity muscle groups for legs-day planning.\n\n\nTrain the quadriceps, hamstrings, glutes, and calves with a squat pattern, a hip hinge, and calf work. Start with a manageable number of sets, because leg training can create more fatigue and may need extra recovery.\n\n\n\nImage sources: anterior muscles, anterior and posterior muscles, and lower-extremity muscles from Wikimedia Commons.\nTrack body weight, gym performance, energy, and waist measurements for several weeks. If weight and performance are not moving, adjust calories gradually rather than changing every variable at once."
+  }
+]
