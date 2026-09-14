@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Building Muscle: A Practical Plan – Milestone 4</title>
+<title>Diamond Price and Cut – Milestone 4</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -114,9 +114,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-line-graph" id="toc-the-line-graph" class="nav-link active" data-scroll-target="#the-line-graph">The line graph</a></li>
-  <li><a href="#how-to-read-the-graph" id="toc-how-to-read-the-graph" class="nav-link" data-scroll-target="#how-to-read-the-graph">How to read the graph</a></li>
-  <li><a href="#workout-day-muscle-map" id="toc-workout-day-muscle-map" class="nav-link" data-scroll-target="#workout-day-muscle-map">Workout-day muscle map</a></li>
+  <li><a href="#a-real-data-graphic" id="toc-a-real-data-graphic" class="nav-link active" data-scroll-target="#a-real-data-graphic">A real data graphic</a></li>
+  <li><a href="#what-the-data-show" id="toc-what-the-data-show" class="nav-link" data-scroll-target="#what-the-data-show">What the data show</a></li>
   </ul>
 </nav>
     </div>
@@ -125,8 +124,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Building Muscle: A Practical Plan</h1>
-<p class="subtitle lead">A simple evidence-informed model for balancing training, food, and recovery</p>
+<h1 class="title">Diamond Price and Cut</h1>
+<p class="subtitle lead">A real-data example using thousands of observations</p>
 </div>
 
 
@@ -143,90 +142,42 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="the-line-graph" class="level2">
-<h2 class="anchored" data-anchor-id="the-line-graph">The line graph</h2>
-<p>Muscle growth is usually supported by four connected habits: progressive resistance training, enough calories, adequate protein and other macronutrients, and consistent rest. This line graph is a <strong>planning illustration</strong>, not a medical prediction. It shows how those inputs can work together as weekly training volume rises from very low to very high.</p>
+<section id="a-real-data-graphic" class="level2">
+<h2 class="anchored" data-anchor-id="a-real-data-graphic">A real data graphic</h2>
+<p>This page uses the built-in <code>diamonds</code> dataset from the <code>ggplot2</code> package. It contains 53,940 observations, so the pattern is based on actual recorded measurements rather than a made-up planning model.</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.2.1     ✔ readr     2.2.0
-✔ forcats   1.0.1     ✔ stringr   1.6.0
-✔ ggplot2   4.0.3     ✔ tibble    3.3.1
-✔ lubridate 1.9.5     ✔ tidyr     1.3.2
-✔ purrr     1.2.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: There was 1 warning in `mutate()`.
-ℹ In argument: `surplus_factor = case_match(...)`.
-Caused by warning:
-! `case_match()` was deprecated in dplyr 1.2.0.
-ℹ Please use `recode_values()` instead.</code></pre>
-</div>
 <div class="cell-output-display">
-<div id="fig-muscle-gain-plan" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-diamond-price" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-muscle-gain-plan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/figure-html/fig-muscle-gain-plan-1.png" class="img-fluid figure-img" width="864">
+<div aria-describedby="fig-diamond-price-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-diamond-price-1.png" class="img-fluid figure-img" width="864">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-muscle-gain-plan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Illustrative muscle-gain planning score by weekly training volume.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diamond-price-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Diamond price rises with carat size, and the relationship differs by diamond cut.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="how-to-read-the-graph" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-read-the-graph">How to read the graph</h2>
-<p>The calorie lines show why a modest surplus is often a useful starting point. Maintenance calories can support training, while roughly 200-300 extra calories per day may provide energy for growth without assuming that a bigger surplus is automatically better. The 500-calorie line is intentionally not the highest line because extra calories can add body fat faster than muscle.</p>
-<p>The workout axis represents challenging sets per muscle group each week. Many people can begin around 8-12 hard sets and gradually move toward 10-20 as their technique and recovery improve. Add a small amount of weight or a few repetitions over time, and do not increase volume when performance and energy are already falling.</p>
-<p>The line style represents rest. Aim for 7-9 hours of sleep, keep at least one easier or rest day in the week, and reduce training briefly when soreness, fatigue, or declining performance persists. The panels compare protein targets within the broader macronutrient plan: about 1.6-2.2 grams of protein per kilogram of body weight per day is a useful range for many active adults. Use carbohydrates to support training energy and include dietary fats for overall health.</p>
-</section>
-<section id="workout-day-muscle-map" class="level2">
-<h2 class="anchored" data-anchor-id="workout-day-muscle-map">Workout-day muscle map</h2>
-<p>The pictures below are a simple way to organize a three-day rotation. They show the main muscle groups to train, not every muscle involved in a movement. A complete plan should still use exercises you can perform with controlled technique and a range of motion that feels safe for you.</p>
-<div class="columns">
-<div class="column" style="width:33%;">
-<section id="day-1-push" class="level3">
-<h3 class="anchored" data-anchor-id="day-1-push">Day 1: Push</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Muscles_anterior_labeled.png" class="img-fluid figure-img"></p>
-<figcaption>Anterior muscle groups for push-day planning.</figcaption>
-</figure>
-</div>
-<p>Train the chest, front and side shoulders, and triceps with presses, push-ups, and controlled isolation work. Leave one or two good repetitions in reserve on most sets instead of forcing every set to failure.</p>
-</section>
-</div><div class="column" style="width:33%;">
-<section id="day-2-pull" class="level3">
-<h3 class="anchored" data-anchor-id="day-2-pull">Day 2: Pull</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/1105_Anterior_and_Posterior_Views_of_Muscles.jpg" class="img-fluid figure-img"></p>
-<figcaption>Anterior and posterior muscle groups for pull-day planning.</figcaption>
-</figure>
-</div>
-<p>Train the upper back, lats, rear shoulders, biceps, and forearms with rows, pull-downs or pull-ups, and curls. Balance pulling volume with pressing volume so the shoulders stay comfortable.</p>
-</section>
-</div><div class="column" style="width:33%;">
-<section id="day-3-legs" class="level3">
-<h3 class="anchored" data-anchor-id="day-3-legs">Day 3: Legs</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Illu_lower_extremity_muscles.jpg" class="img-fluid figure-img"></p>
-<figcaption>Lower-extremity muscle groups for legs-day planning.</figcaption>
-</figure>
-</div>
-<p>Train the quadriceps, hamstrings, glutes, and calves with a squat pattern, a hip hinge, and calf work. Start with a manageable number of sets, because leg training can create more fatigue and may need extra recovery.</p>
-</section>
+<section id="what-the-data-show" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-data-show">What the data show</h2>
+<p>The chart shows a clear pattern: larger diamonds cost more, and the strength of that relationship depends on the cut. In this dataset, price rises sharply as carat increases, while the spread by cut suggests that quality and craftsmanship matter alongside stone size.</p>
+<p>This example is based on real observations from a public data set, not on invented values or illustrative modeling assumptions. The graphic is therefore a valid data-based analysis, not a planning illustration.</p>
+<p>A simple summary of the same data helps show the pattern even more directly:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  cut       mean_price mean_carat     n
+  &lt;ord&gt;          &lt;dbl&gt;      &lt;dbl&gt; &lt;int&gt;
+1 Fair           4359.      1.05   1610
+2 Good           3929.      0.849  4906
+3 Very Good      3982.      0.806 12082
+4 Premium        4584.      0.892 13791
+5 Ideal          3458.      0.703 21551</code></pre>
 </div>
 </div>
-<p>Image sources: <a href="https://commons.wikimedia.org/wiki/File:Muscles_anterior_labeled.png">anterior muscles</a>, <a href="https://commons.wikimedia.org/wiki/File:1105_Anterior_and_Posterior_Views_of_Muscles.jpg">anterior and posterior muscles</a>, and <a href="https://commons.wikimedia.org/wiki/File:Illu_lower_extremity_muscles.jpg">lower-extremity muscles</a> from Wikimedia Commons.</p>
-<p>Track body weight, gym performance, energy, and waist measurements for several weeks. If weight and performance are not moving, adjust calories gradually rather than changing every variable at once.</p>
+<p>The table confirms that the average price is not constant across cuts, and the relationship between cut and value is visible in real measurements from the data set.</p>
 
 
 </section>
@@ -305,7 +256,7 @@ Figure&nbsp;1: Illustrative muscle-gain planning score by weekly training volume
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/degenovatristan\.github\.io\/milestone-4\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
